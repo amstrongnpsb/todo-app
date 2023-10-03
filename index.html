@@ -12,7 +12,15 @@
         tailwind.config = {
             theme: {
                 extend: {
-
+                    keyframes: {
+                        'show': {
+                            '0%': { transform: 'translateY(-10px)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                    },
+                    animation: {
+                        'show': 'show 0.4s ',
+                    }
                 }
             }
         }
@@ -24,16 +32,19 @@
     <div class="container w-3/4 m-auto  min-h-screen p-20 box-border">
         <div
             class="content-container w-9/12 h-auto flex flex-col bg-zinc-800 text-slate-100 m-auto rounded-xl p-3 pb-10">
-            <div class="content-title font-bold text-xl">
-                <h1>ToDo Application</h1>
-            </div>
-            <div class="content-wrapper w-11/12 m-auto min-h-[500px] mt-2">
-                <div class="search-bar bg-slate-100 w-2/4 m-auto p-1 rounded-xl box-border">
-                    <input type="text" class="rounded-lg focus:ring-1 bg-zinc-800 w-11/12 p-1 box-border text-center">
-                    <i class="fa-solid fa-magnifying-glass text-zinc-800"></i>
+            <div class="content-wrapper w-11/12 m-auto min-h-[500px] mt-2 ">
+                <div class="navbar flex justify-between">
+                    <div class="content-title font-bold text-xl w-auto">
+                        <h1>ToDo Application</h1>
+                    </div>
+                    <div class="search-bar bg-slate-100 w-2/4 p-1 rounded-xl box-border">
+                        <input type="text"
+                            class="rounded-lg focus:ring-1 bg-zinc-800 w-11/12 p-1 box-border text-center">
+                        <i class="fa-solid fa-magnifying-glass text-zinc-800"></i>
+                    </div>
                 </div>
                 <button
-                    class="add-content w-1/6 bg-slate-100 text-zinc-800 font-semibold pt-1 pb-1 mt-3 rounded-xl text-center hover:bg-zinc-300">
+                    class="add-content w-1/6 bg-slate-100 text-zinc-800 font-semibold pt-1 pb-1 mt-3 rounded-xl text-center hover:bg-zinc-200 active:bg-zinc-400">
                     <i class="fa-solid fa-plus bg-zinc-800 rounded-full text-zinc-100 p-1"></i>
                     Add
                     Task
