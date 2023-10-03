@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="font-mono">
+    <div class="container w-3/4 m-auto  min-h-screen p-20 box-border">
+        <div
+            class="content-container w-9/12 h-auto flex flex-col bg-zinc-800 text-slate-100 m-auto rounded-xl p-3 pb-10">
+            <div class="content-title font-bold text-xl">
+                <h1>ToDo Application</h1>
+            </div>
+            <div class="content-wrapper w-11/12 m-auto min-h-[500px] mt-2">
+                <div class="search-bar bg-slate-100 w-2/4 m-auto p-1 rounded-xl box-border">
+                    <input type="text" class="rounded-lg focus:ring-1 bg-zinc-800 w-11/12 p-1 box-border text-center">
+                    <i class="fa-solid fa-magnifying-glass text-zinc-800"></i>
+                </div>
+                <button
+                    class="add-content w-1/6 bg-slate-100 text-zinc-800 font-semibold pt-1 pb-1 mt-3 rounded-xl text-center hover:bg-zinc-300">
+                    <i class="fa-solid fa-plus bg-zinc-800 rounded-full text-zinc-100 p-1"></i>
+                    Add
+                    Task
+                </button>
+                <div class="add-form w-10/12 bg-slate-300 mt-3 rounded-xl">
+                    <input type="text" placeholder="Enter New Task"
+                        class="w-11/12 m-2 rounded-lg p-1 focus:ring-zinc-800 focus:outline-none focus:ring-4 text-zinc-800 pl-4"><i
+                        class="fa-solid fa-plus bg-zinc-800 rounded-full text-zinc-100 p-1 cursor-pointer"></i>
+                </div>
+
+                <div class="content-list w-3/4 bg-zinc-200 min-h-[70px] m-auto mt-3 rounded-xl p-1 flex flex-col">
+                    <div class="date-time text-zinc-800 text-[12px] font-bold self-end ">
+                    </div>
+                    <div class="date-time text-zinc-800 text-[15px] font-bold pb-4 pl-4 pr-4 pt-2 cursor-pointer">Lorem,
+                        ipsum dolor
+                        sit
+                        amet
+                        consectetur adipisicing elit. Iste hic quis tempore aliquam minus ratione ad, libero vitae.
+                        Autem assumenda impedit dolor sequi rerum maiores laudantium modi et aperiam, sunt voluptatibus
+                        ipsa quo repellat eveniet sapiente est fugit vel perspiciatis atque similique corporis eaque
+                        beatae tenetur. Aspernatur, reprehenderit? Optio, doloribus!</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
