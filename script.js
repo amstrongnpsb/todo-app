@@ -120,7 +120,7 @@ function taskCard(i) {
              </div>
              <div class="delete-button text-red-800 text-2xl m-auto cursor-pointer mr-4
              rounded-full hover:text-red-950 hover:duration-150 active:text-red-800" >
-                 <i class="fa-solid fa-trash delete-button" data-key="${i.id}"></i>
+                 <i class="fa-solid fa-trash delete-button" data-key="${i.id}" data-swal-template="#my-template"></i>
              </div>
           </div>`;
 }
@@ -128,24 +128,32 @@ function taskCard(i) {
 const deleteTask = () => {
   document.addEventListener("click", (event) => {
     if (event.target.classList.contains("delete-button")) {
-      const tes = confirm("Want to delete?");
-      if (tes == true) {
-        const data = JSON.parse(localStorage.getItem("tasklist"));
-        const key = event.target.dataset.key;
-        const result = data.findIndex((d) => key == d.id);
-        if (result !== -1) {
-          // splice(indexPosition, how many index to delete)
-          const deletedData = data.splice(result, 1);
-          localStorage.setItem("tasklist", JSON.stringify(data));
-        }
-        if (data.length == 0) {
-          document.getElementsByClassName("content-list")[0].remove();
-        }
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Delete!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const data = JSON.parse(localStorage.getItem("tasklist"));
+          const key = event.target.dataset.key;
+          const result = data.findIndex((d) => key == d.id);
+          if (result !== -1) {
+            // splice(indexPosition, how many index to delete)
+            data.splice(result, 1);
+            localStorage.setItem("tasklist", JSON.stringify(data));
+          }
+          if (data.length == 0) {
+            document.getElementsByClassName("content-list")[0].remove();
+          }
 
-        renderTicketList();
-      } else {
-        return console.log("delete canceled");
-      }
+          renderTicketList();
+          Swal.fire("Deleted!", "Task has been deleted.", "success");
+        }
+      });
     }
   });
 };
