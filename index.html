@@ -17,9 +17,14 @@
                             '0%': { transform: 'translateY(-10px)' },
                             '100%': { transform: 'translateX(0)' },
                         },
+                        'card': {
+                            '0%': { transform: 'scale(0)' },
+                            '100%': { transform: 'scale(1)' },
+                        },
                     },
                     animation: {
                         'show': 'show 0.4s ',
+                        'card': 'card 0.4s ',
                     }
                 }
             }
@@ -49,23 +54,18 @@
                     Add
                     Task
                 </button>
-                <!-- <div class="add-form w-10/12 bg-slate-300 mt-3 rounded-xl">
-                    <input type="text" placeholder="Enter New Task"
-                        class="w-11/12 m-2 rounded-lg p-1 focus:ring-zinc-800 focus:outline-none focus:ring-4 text-zinc-800 pl-4"><i
-                        class="fa-solid fa-plus bg-zinc-800 rounded-full text-zinc-100 p-1 cursor-pointer"></i>
-                </div> -->
+                <div class="task-list">
+                    <!-- <div
+                        class="content-list w-3/4 bg-zinc-200 h-auto m-auto mt-3 rounded-xl p-1 flex flex-col animate-card">
+                        <div class="date-time text-zinc-800 text-[12px] font-bold self-end ">10 januari
+                        </div>
+                        <div class="text-zinc-800 text-[15px] font-bold pb-4 pl-4 pr-4 pt-2 cursor-pointer">Lorem ipsum
+                            dolor sit, amet consectetur adipisicing elit. Dolore autem labore animi fugit libero
+                            molestias provident, atque quae? Eum ut eligendi natus illo, dolorem cupiditate veniam
+                            repellat ex suscipit eaque quod sequi sed nulla illum amet asperiores. Blanditiis nulla in
+                            vero officiis repellat ratione quis, animi, maiores numquam est possimus.</div>
+                    </div> -->
 
-                <div class="content-list w-3/4 bg-zinc-200 min-h-[70px] m-auto mt-3 rounded-xl p-1 flex flex-col">
-                    <div class="date-time text-zinc-800 text-[12px] font-bold self-end ">
-                    </div>
-                    <div class="date-time text-zinc-800 text-[15px] font-bold pb-4 pl-4 pr-4 pt-2 cursor-pointer">Lorem,
-                        ipsum dolor
-                        sit
-                        amet
-                        consectetur adipisicing elit. Iste hic quis tempore aliquam minus ratione ad, libero vitae.
-                        Autem assumenda impedit dolor sequi rerum maiores laudantium modi et aperiam, sunt voluptatibus
-                        ipsa quo repellat eveniet sapiente est fugit vel perspiciatis atque similique corporis eaque
-                        beatae tenetur. Aspernatur, reprehenderit? Optio, doloribus!</div>
                 </div>
 
             </div>
